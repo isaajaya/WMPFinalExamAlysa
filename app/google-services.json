@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "726413215131",
+    "project_id": "finalexamalysa",
+    "storage_bucket": "finalexamalysa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726413215131:android:5fcd21b37dda6cf1be0d3e",
+        "android_client_info": {
+          "package_name": "com.example.finalexamalysa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaCZnRlNGPtYE5_ym4Sz0jGgMLWrgiXuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
