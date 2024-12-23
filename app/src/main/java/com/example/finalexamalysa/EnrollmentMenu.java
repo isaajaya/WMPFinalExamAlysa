@@ -21,14 +21,13 @@ public class EnrollmentMenu extends AppCompatActivity {
 
         btnSelectSubjects = findViewById(R.id.btnSelectSubjects);
 
-        // Get the currently logged-in user from FirebaseAuth
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = auth.getCurrentUser();
 
         if (currentUser != null) {
-            username = currentUser.getEmail(); // Get the email of the logged-in user
+            username = currentUser.getEmail();
         } else {
-            // If no user is logged in, navigate back to the login screen
+
             Toast.makeText(this, "User not logged in. Please log in again.", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, Login.class));
             finish(); // Close the current activity
@@ -40,5 +39,13 @@ public class EnrollmentMenu extends AppCompatActivity {
             intent.putExtra("username", username);
             startActivity(intent);
         });
+
+        String username = getIntent().getStringExtra("username");
+        if (username == null || username.isEmpty()) {
+            Toast.makeText(this, "Failed to get username.", Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
+
     }
 }

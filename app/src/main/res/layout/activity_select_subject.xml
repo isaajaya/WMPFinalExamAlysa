@@ -3,87 +3,16 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/subjectContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <CheckBox
-            android:id="@+id/chkDatabaseSystem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Database System (3 credits)" />
-
-        <CheckBox
-            android:id="@+id/chkNetworkSecurity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Network Security (3 credits)" />
-
-        <CheckBox
-            android:id="@+id/chkWirelessMobileProgramming"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Wireless and Mobile Programming (3 credits)" />
-
-        <CheckBox
-            android:id="@+id/chkCalculus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Calculus (3 credits)" />
-
-        <CheckBox
-            android:id="@+id/chkComputerNetwork"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Computer Network (3 credits)" />
-
-        <CheckBox
-            android:id="@+id/chkDataStructureAlgorithm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Data Structure and Algorithm (3 credits)" />
-
-        <CheckBox
-            android:id="@+id/chkDiscreteMathematics"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Discrete Mathematics (3 credits)" />
-
-        <CheckBox
-            android:id="@+id/chkLinearAlgebra"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Linear Algebra (3 credits)" />
-
-        <CheckBox
-            android:id="@+id/chkNumericalMethods"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Numerical Methods (3 credits)" />
-
-        <CheckBox
-            android:id="@+id/chkProbabilityStatistics"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Probability and Statistics (3 credits)" />
-
-        <CheckBox
-            android:id="@+id/chkProgrammingConcepts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Programming Concepts (3 credits)" />
-
-        <CheckBox
-            android:id="@+id/chkServerSideProgramming"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Server-side Internet Programming (3 credits)" />
-
         <Button
             android:id="@+id/btnSaveSubjects"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save Subjects" />
+            android:text="Save Selected Subjects" />
     </LinearLayout>
 </ScrollView>

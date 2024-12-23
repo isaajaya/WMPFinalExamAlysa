@@ -15,10 +15,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login extends AppCompatActivity {
-    private EditText txtUsername, txtPassword;
+    private EditText txtEmail, txtPassword;
     private Button btnLogin, btnRegister;
     private FirebaseAuth auth;
 
@@ -27,7 +26,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        txtUsername = findViewById(R.id.txtEmail);
+        txtEmail = findViewById(R.id.txtEmail);
         txtPassword = findViewById(R.id.txtPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);
@@ -38,23 +37,23 @@ public class Login extends AppCompatActivity {
     }
 
     private void validateAndLogin() {
-        String username = txtUsername.getText().toString().trim();
+        String email = txtEmail.getText().toString().trim();
         String password = txtPassword.getText().toString().trim();
 
-        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
             Toast.makeText(this, "All fields are required", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        auth.signInWithEmailAndPassword(username, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     FirebaseUser user = auth.getCurrentUser();
                     if (user != null) {
                         Toast.makeText(Login.this, "Welcome, " + user.getEmail(), Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(Login.this, EnrollmentMenu.class);
-                        intent.putExtra("username", user.getEmail());
+                        Intent intent = new Intent(Login.this, SelectSubject.class);
+                        intent.putExtra("username", user.getEmail()); // Send email to SelectSubject
                         startActivity(intent);
                         finish();
                     }
@@ -64,6 +63,5 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
-
     }
 }
